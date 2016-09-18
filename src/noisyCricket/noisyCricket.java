@@ -74,13 +74,14 @@ public class noisyCricket {
                 ArrayList wordList = new ArrayList();
                 while (scanner.hasNext()) {
                     //System.out.println(scanner.next());
-                    wordList.set(index, scanner.next());
+                    wordList.add(index, scanner.next());
                     index++;
                 }
 
-                // Pick a random number within index range
-                List<Integer> range = IntStream.rangeClosed(0, wordList.lastIndexOf(url)).boxed().collect(Collectors.toList());
+                // Pick a random number within index range wordList.lastIndexOf(url)
+                List<Integer> range = IntStream.rangeClosed(0, wordList.size()).boxed().collect(Collectors.toList());
                 Collections.shuffle(range);
+
                 int index1 = range.get(0);
 
                 //query Google
